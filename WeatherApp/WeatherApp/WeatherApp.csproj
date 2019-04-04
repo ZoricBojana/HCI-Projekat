@@ -72,7 +72,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="model\Bookmark.cs" />
     <Compile Include="model\Forecast.cs" />
+    <Compile Include="model\History.cs" />
     <Compile Include="model\Weather.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
