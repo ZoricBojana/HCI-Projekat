@@ -6,5 +6,14 @@
         xmlns:local="clr-namespace:WeatherApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+    <Grid>
+        <TextBox x:Name="textBox_search" HorizontalAlignment="Left" Height="23" Margin="203,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button_search" Content="Search" HorizontalAlignment="Left" Margin="359,62,0,0" VerticalAlignment="Top" Width="75" Click="Button_search_Click"/>
+        <Button x:Name="button_bookmark" Content="Bookmark this search" HorizontalAlignment="Left" Margin="487,62,0,0" VerticalAlignment="Top" Width="75" Click="Button_bookmark_Click"/>
+        <TextBox x:Name="textBox_hist" HorizontalAlignment="Left" Height="120" Margin="203,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+        <TextBox x:Name="textBox_bookmark" HorizontalAlignment="Left" Height="120" Margin="434,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107"/>
+        <Label x:Name="label" Content="Bookmark" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="434,142,0,0" Width="67"/>
+        <Label x:Name="label1" Content="History" HorizontalAlignment="Left" Margin="221,142,0,0" VerticalAlignment="Top"/>
+    </Grid>
+
 </Window>

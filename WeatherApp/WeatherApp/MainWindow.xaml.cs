@@ -25,9 +25,18 @@ namespace WeatherApp
 		const string APPID = "505ed5f2695f504e33eeadd684d53537";
 		string cityName = "";
 
+
+		History history = new History();
+		Bookmark bookmark = new Bookmark();
+
 		public MainWindow()
 		{
 			InitializeComponent();
+
+
+			textBox_hist.Text = history.MakeString();
+			textBox_bookmark.Text = bookmark.MakeString();
+
 			getForecast("Novi+Sad");
 			getWeather("Novi+Sad");
 		}
@@ -55,6 +64,29 @@ namespace WeatherApp
 				//textBlock.Text = json;
 				var result = JsonConvert.DeserializeObject<Weather.root>(json);
 
+			}
+		}
+
+		private void Button_search_Click(object sender, RoutedEventArgs e)
+		{
+			string city = textBox_search.Text.Trim();
+
+			if (city != "")
+			{
+				getWeather(city);
+				history.AddItem(city);
+				textBox_hist.AppendText(" " + city);
+			}
+		}
+
+		private void Button_bookmark_Click(object sender, RoutedEventArgs e)
+		{
+			string city = textBox_search.Text.Trim();
+
+			if (city != "")
+			{
+				bookmark.AddItem(city);
+				textBox_bookmark.AppendText(" " + city);
 			}
 		}
 	}
