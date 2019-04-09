@@ -57,9 +57,9 @@
                
                 <Image Name="weatherIcon" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Stretch="UniformToFill"/>
 
-                <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Name="lbl_temperature" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="48">C</Label>
+                <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Name="lbl_temperature" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="52">C</Label>
 				<Label Grid.Row="0" Grid.Column="2" Name="lbl_city" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="14"></Label>
-			
+				<Label Grid.Row="0" Grid.Column="2" Name="description_lbl" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" FontSize="14">Suncano</Label>
 				
 				<Label Name="tomorrow" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">Sutra</Label>
                 <Image Name="day1Icon" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Stretch="None" />

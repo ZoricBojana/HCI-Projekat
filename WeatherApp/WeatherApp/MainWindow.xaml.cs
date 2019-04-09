@@ -53,6 +53,7 @@ namespace WeatherApp
 			//lbl_updated.Content = ("Azurirano: " + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"));
 		}
 
+
 		void getForecast(string city) {
 			lbl_updated.Content = ("Azurirano: " + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"));
 			// city = Novi+Sad
@@ -237,6 +238,25 @@ namespace WeatherApp
 
 				weatherIcon.Source = new BitmapImage(new Uri("/images/" + output.weather[0].icon + ".png", UriKind.Relative));
 				lbl_temperature.Content = Math.Round(output.main.temp - 273.15) + "\u00B0C";
+
+                string description = output.weather[0].main;
+                switch(description)
+                {
+                    case "Clouds":
+                        description = "Oblacno";
+                        break;
+                    case "Clear":
+                        description = "Vedro";
+                        break;
+                    case "Sunny":
+                        description = "Suncano";
+                        break;
+   
+                }
+
+                description_lbl.Content = "         " +  description;
+                
+
 			}
 		}
 
