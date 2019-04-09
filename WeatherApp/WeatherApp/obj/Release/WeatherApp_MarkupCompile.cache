@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Fakultet\Sesti_semestar\HCI\Projekat\HCI-Projekat\WeatherApp\WeatherApp\obj\Debug\
+E:\Fakultet\Sesti_semestar\HCI\Projekat\HCI-Projekat\WeatherApp\WeatherApp\obj\Release\
 WeatherApp
 none
 false
-DEBUG;TRACE
+TRACE
 E:\Fakultet\Sesti_semestar\HCI\Projekat\HCI-Projekat\WeatherApp\WeatherApp\App.xaml
 11151548125
 
-141800616615
+10-125977143
 14154165935
 MainWindow.xaml;
 
-False
+True
 

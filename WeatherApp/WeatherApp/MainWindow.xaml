@@ -5,15 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WeatherApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox x:Name="textBox_search" HorizontalAlignment="Left" Height="23" Margin="203,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button_search" Content="Search" HorizontalAlignment="Left" Margin="359,62,0,0" VerticalAlignment="Top" Width="75" Click="Button_search_Click"/>
-        <Button x:Name="button_bookmark" Content="Bookmark this search" HorizontalAlignment="Left" Margin="487,62,0,0" VerticalAlignment="Top" Width="75" Click="Button_bookmark_Click"/>
-        <TextBox x:Name="textBox_hist" HorizontalAlignment="Left" Height="120" Margin="203,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
-        <TextBox x:Name="textBox_bookmark" HorizontalAlignment="Left" Height="120" Margin="434,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107"/>
-        <Label x:Name="label" Content="Bookmark" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="434,142,0,0" Width="67"/>
-        <Label x:Name="label1" Content="History" HorizontalAlignment="Left" Margin="221,142,0,0" VerticalAlignment="Top"/>
-    </Grid>
+        Title="Vremenska prognoza" Height="450" Width="800">
 
+    <DockPanel>
+        <Menu DockPanel.Dock ="Top">
+            <Menu.ItemsPanel>
+                <!--Podkontrola koja određuje kako se item-i prikazuju.-->
+                <ItemsPanelTemplate>
+                    <!-- Specificiramo ne šta je u kontroli nego template koji je formira-->
+                    <DockPanel HorizontalAlignment="Stretch"></DockPanel>
+                    <!-- Prikazujemo preko Dock Panela koji preuzme sav prostor -->
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem Header="_Pretraga">
+                <MenuItem Header="_"></MenuItem>
+                <MenuItem Header="_"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="_"></MenuItem>
+            </MenuItem>
+
+        </Menu>
+        <DockPanel DockPanel.Dock="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid DockPanel.Dock="Bottom">
+                <Label>Messag</Label>
+            </Grid>
+            <Grid DockPanel.Dock="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+      
+                <Grid.Background>
+                    <ImageBrush Stretch="Fill" Opacity="0.5" ImageSource="images\background.jpg"
+                    AlignmentY="Top" AlignmentX="Center"/>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="7*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Image Name="weatherIcon" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Stretch="UniformToFill"/>
+
+                <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Name="lbl_temperature" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="48">C</Label>
+                <Label Grid.Row="1" Grid.ColumnSpan="3" Name="lbl_updated">Azurirano</Label>
+            </Grid>
+
+        </DockPanel>
+    </DockPanel>
 </Window>

@@ -23,6 +23,7 @@ namespace WeatherApp
 	public partial class MainWindow : Window
 	{
 		const string APPID = "505ed5f2695f504e33eeadd684d53537";
+		const string APIIP = "0efe5bc2ad27daf51de12523f9c30924";
 		string cityName = "";
 
 
@@ -32,15 +33,13 @@ namespace WeatherApp
 		public MainWindow()
 		{
 			InitializeComponent();
+			getLocation(); // smesta lokaciju u cityName
+			getForecast(cityName);
+			getWeather(cityName);
 
-
-			textBox_hist.Text = history.MakeString();
-			textBox_bookmark.Text = bookmark.MakeString();
-
-			getForecast("Novi+Sad");
-			getWeather("Novi+Sad");
+			lbl_updated.Content = ("Azurirano: " + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"));
 		}
-	
+
 		void getForecast(string city) {
 			// city = Novi+Sad
 			using (WebClient webClient = new WebClient()) {
@@ -63,31 +62,24 @@ namespace WeatherApp
 				var json = webClient.DownloadString(url);
 				//textBlock.Text = json;
 				var result = JsonConvert.DeserializeObject<Weather.root>(json);
+				Weather.root output = result;
 
+				weatherIcon.Source = new BitmapImage(new Uri("/images/" + output.weather[0].icon + ".png", UriKind.Relative));
+				lbl_temperature.Content = (output.main.temp - 273.15) + "\u00B0C";
 			}
 		}
 
-		private void Button_search_Click(object sender, RoutedEventArgs e)
-		{
-			string city = textBox_search.Text.Trim();
-
-			if (city != "")
+		public void getLocation() {
+			using (WebClient web = new WebClient())
 			{
-				getWeather(city);
-				history.AddItem(city);
-				textBox_hist.AppendText(" " + city);
+				var json = web.DownloadString($"http://api.ipstack.com/check?access_key={APIIP}");
+
+				var result = JsonConvert.DeserializeObject<Location>(json);
+				cityName = result.city;
+				//textBox_search.Text = cityName;
 			}
 		}
 
-		private void Button_bookmark_Click(object sender, RoutedEventArgs e)
-		{
-			string city = textBox_search.Text.Trim();
-
-			if (city != "")
-			{
-				bookmark.AddItem(city);
-				textBox_bookmark.AppendText(" " + city);
-			}
-		}
+		
 	}
 }

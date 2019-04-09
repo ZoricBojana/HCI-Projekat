@@ -75,6 +75,7 @@
     <Compile Include="model\Bookmark.cs" />
     <Compile Include="model\Forecast.cs" />
     <Compile Include="model\History.cs" />
+    <Compile Include="model\Location.cs" />
     <Compile Include="model\Weather.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -101,6 +102,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\01d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\02d.png" />
+    <Resource Include="images\03d.png" />
+    <Resource Include="images\04d.png" />
+    <Resource Include="images\09d.png" />
+    <Resource Include="images\10d.png" />
+    <Resource Include="images\11d.png" />
+    <Resource Include="images\13d.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
