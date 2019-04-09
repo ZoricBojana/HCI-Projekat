@@ -314,6 +314,7 @@ namespace WeatherApp
 				historyMenu.Items.Add(mItem);
 				getForecast(cityName);
 				getWeather(cityName);
+				msg.Content = "Prikazani su podaci za lokaciju " + text;
 			}
 		}
 
@@ -328,6 +329,7 @@ namespace WeatherApp
 				mItem.Header = text;
 				mItem.Click += MenuItem_Click;
 				bookmarkMenu.Items.Add(mItem);
+				msg.Content ="Lokacija " + text + " je dodata u omiljene";
 			}
 		}
 	}

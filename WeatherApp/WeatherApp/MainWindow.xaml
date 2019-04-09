@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WeatherApp"
         mc:Ignorable="d"
-        Title="Vremenska prognoza" Height="450" Width="800">
+        Title="Vremenska prognoza" Height="450" Width="800" MinHeight="450" MinWidth="800">
 
     <DockPanel>
         <Menu DockPanel.Dock ="Top">
@@ -41,7 +41,7 @@
         </Menu>
         <DockPanel DockPanel.Dock="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <Grid DockPanel.Dock="Bottom">
-				<Label></Label>
+				<Label Name="msg"></Label>
                 <Label HorizontalAlignment="Right" Name="lbl_updated">Azurirano</Label>
             </Grid>
             <Grid DockPanel.Dock="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
