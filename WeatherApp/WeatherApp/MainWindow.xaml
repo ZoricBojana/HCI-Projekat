@@ -28,6 +28,7 @@
         <DockPanel DockPanel.Dock="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <Grid DockPanel.Dock="Bottom">
                 <Label>Messag</Label>
+                <Label HorizontalAlignment="Right" Name="lbl_updated">Azurirano</Label>
             </Grid>
             <Grid DockPanel.Dock="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
       
@@ -50,7 +51,27 @@
                 <Image Name="weatherIcon" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Stretch="UniformToFill"/>
 
                 <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Name="lbl_temperature" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="48">C</Label>
-                <Label Grid.Row="1" Grid.ColumnSpan="3" Name="lbl_updated">Azurirano</Label>
+               
+                <Label Name="tomorrow" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">Tommorow</Label>
+                <Image Name="day1Icon" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Stretch="None" />
+                <Label Name="day1temp" Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Label>
+
+                <Label Name="day2Lab" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center"></Label>
+                <Image Name="day2Icon" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Stretch="None" />
+                <Label Name="day2temp" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Label>
+
+                <Label Name="day3Lab" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center"></Label>
+                <Image Name="day3Icon" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Stretch="None" />
+                <Label Name="day3temp" Grid.Row="2" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Label>
+
+                <Label Name="day4Lab" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center"></Label>
+                <Image Name="day4Icon" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" Stretch="None" />
+                <Label Name="day4temp" Grid.Row="2" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Label>
+
+
+                <Label Name="day5Lab" Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center"></Label>
+                <Image Name="day5Icon" Grid.Row="2" Grid.Column="4" VerticalAlignment="Center" Stretch="None" />
+                <Label Name="day5temp" Grid.Row="2" Grid.Column="4" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Label>
             </Grid>
 
         </DockPanel>
