@@ -72,17 +72,19 @@ namespace WeatherApp
 
 				for (int i = 0; i < 5; i++) {
 					var dayx = DateTime.Now.AddDays(i+1).ToString("yyyy-MM-dd");
-					foreach (var d in output.list) {
+                    var date = DateTime.Now.AddDays(i + 1).ToString("dd/MM/yyyy");
+                    foreach (var d in output.list) {
 						if (d.dt_txt.Contains(dayx)) {
-							if (!dict.ContainsKey(dayx)) {
-								dict[dayx] = new List<Forecast.list>();
+							if (!dict.ContainsKey(date)) {
+								dict[date] = new List<Forecast.list>();
 							}
-							dict[dayx].Add(d);
+          
+							dict[date].Add(d);
 						}
 					}
 				}
 				//***** day1
-				var day1 = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
+				var day1 = DateTime.Now.AddDays(1).ToString("dd/MM/yyyy");
 				double min_temp = 100;
 				double max_temp = -50;
 				//int br = 0;
@@ -103,11 +105,11 @@ namespace WeatherApp
 					}
 				}
 
-				day1temp.Content = "Min: " + Math.Floor(min_temp) + "\u00B0C" + "\nMax: " + Math.Ceiling(max_temp) + "\u00B0C";
+				day1temp.Content = "Min: " + Math.Floor(min_temp) + "\u00B0C" + "\nMaks: " + Math.Ceiling(max_temp) + "\u00B0C";
 
 				//********* day 2 *****
 
-				var day2 = DateTime.Now.AddDays(2).ToString("yyyy-MM-dd");
+				var day2 = DateTime.Now.AddDays(2).ToString("dd/MM/yyyy");
 				day2Lab.Content = day2;
 				min_temp = 100;
 				max_temp = -50;
@@ -130,11 +132,11 @@ namespace WeatherApp
 					}
 				}
 
-				day2temp.Content = "Min: " + Math.Floor(min_temp) + "\u00B0C" + "\nMax: " + Math.Ceiling(max_temp) + "\u00B0C";
+				day2temp.Content = "Min: " + Math.Floor(min_temp) + "\u00B0C" + "\nMaks: " + Math.Ceiling(max_temp) + "\u00B0C";
 
 				//********* day 3 *****
 
-				var day3 = DateTime.Now.AddDays(3).ToString("yyyy-MM-dd");
+				var day3 = DateTime.Now.AddDays(3).ToString("dd/MM/yyyy");
 				day3Lab.Content = day3;
 				min_temp = 100;
 				max_temp = -50;
@@ -158,11 +160,11 @@ namespace WeatherApp
 					}
 				}
 
-				day3temp.Content = "Min: " + Math.Floor(min_temp) + "\u00B0C" + "\nMax: " + Math.Ceiling(max_temp) + "\u00B0C";
+				day3temp.Content = "Min: " + Math.Floor(min_temp) + "\u00B0C" + "\nMaks: " + Math.Ceiling(max_temp) + "\u00B0C";
 
 				//********* day 4 *****
 
-				var day4 = DateTime.Now.AddDays(4).ToString("yyyy-MM-dd");
+				var day4 = DateTime.Now.AddDays(4).ToString("dd/MM/yyyy");
 				day4Lab.Content = day4;
 				min_temp = 100;
 				max_temp = -50;
@@ -185,11 +187,11 @@ namespace WeatherApp
 					}
 				}
 
-				day4temp.Content = "Min: " + Math.Floor(min_temp) + "\u00B0C" + "\nMax: " + Math.Ceiling(max_temp) + "\u00B0C";
+				day4temp.Content = "Min: " + Math.Floor(min_temp) + "\u00B0C" + "\nMaks: " + Math.Ceiling(max_temp) + "\u00B0C";
 
 				//********* day 5 *****
 
-				var day5 = DateTime.Now.AddDays(5).ToString("yyyy-MM-dd");
+				var day5 = DateTime.Now.AddDays(5).ToString("dd/MM/yyyy");
 				day5Lab.Content = day5;
 				min_temp = 100;
 				max_temp = -50;
@@ -212,7 +214,7 @@ namespace WeatherApp
 					}
 				}
 
-				day5temp.Content = "Min: " + Math.Floor(min_temp) + "\u00B0C" + "\nMax: " + Math.Ceiling(max_temp) + "\u00B0C";
+				day5temp.Content = "Min: " + Math.Floor(min_temp) + "\u00B0C" + "\nMaks: " + Math.Ceiling(max_temp) + "\u00B0C";
 
 			}
 		}
@@ -222,7 +224,7 @@ namespace WeatherApp
 		{
 			lbl_updated.Content = ("Azurirano: " + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"));
 			// city = Novi+Sad
-			lbl_city.Content = "Grad: \n" + city;
+			lbl_city.Content ="Trenutna temperatura\n      " + city;
 
 			using (WebClient webClient = new WebClient())
 			{

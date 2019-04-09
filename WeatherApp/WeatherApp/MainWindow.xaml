@@ -23,7 +23,7 @@
                 <Separator></Separator>
                 <MenuItem Header="_"></MenuItem>
             </MenuItem>
-            <MenuItem Header="_Bookmark" Name="bookmarkMenu">
+            <MenuItem Header="_Omiljene lokacije" Name="bookmarkMenu">
       
             </MenuItem>
             <MenuItem Header="_Osvezi" Name="refresh" HorizontalAlignment="Right">
@@ -32,7 +32,7 @@
         </Menu>
         <DockPanel DockPanel.Dock="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <Grid DockPanel.Dock="Bottom">
-                <Label>Messag</Label>
+				<Label></Label>
                 <Label HorizontalAlignment="Right" Name="lbl_updated">Azurirano</Label>
             </Grid>
             <Grid DockPanel.Dock="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
@@ -54,14 +54,14 @@
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" Name="lbl_city" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24"></Label>
-
-
+               
                 <Image Name="weatherIcon" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Stretch="UniformToFill"/>
 
                 <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Name="lbl_temperature" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="48">C</Label>
-               
-                <Label Name="tomorrow" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">Tommorow</Label>
+				<Label Grid.Row="0" Grid.Column="2" Name="lbl_city" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="14"></Label>
+			
+				
+				<Label Name="tomorrow" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">Sutra</Label>
                 <Image Name="day1Icon" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Stretch="None" />
                 <Label Name="day1temp" Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Label>
 
