@@ -27,15 +27,15 @@ namespace WeatherApp
 		string cityName = "";
 
 
-		History history = new History();
-		
+		Bookmark bookmark;
+		History history;
 
 		public MainWindow()
 		{
 			InitializeComponent();
 
 			//*******dodaj elemente
-			Bookmark bookmark = new Bookmark();
+			bookmark = new Bookmark();
 			foreach (string el in bookmark.BookmarkItems)
 			{
 				MenuItem mItem = new MenuItem();
@@ -43,6 +43,18 @@ namespace WeatherApp
 				mItem.Header = el;
 				mItem.Click+= MenuItem_Click;
 				bookmarkMenu.Items.Add(mItem);
+			}
+			//******
+
+			//*******dodaj elemente
+			history = new History();
+			foreach (string el in history.HistoryItems)
+			{
+				MenuItem mItem = new MenuItem();
+				mItem.Name = el.Replace(" ", "_");
+				mItem.Header = el;
+				mItem.Click += MenuItem_Click;
+				historyMenu.Items.Add(mItem);
 			}
 			//******
 
@@ -280,6 +292,43 @@ namespace WeatherApp
 
 			getForecast(cityName);
 			getWeather(cityName);
+		}
+
+		private void Refresh_Click(object sender, RoutedEventArgs e)
+		{
+			getForecast(cityName);
+			getWeather(cityName);
+		}
+
+		private void SearchBtn_Click(object sender, RoutedEventArgs e)
+		{
+			string text = searchTB.Text;
+			if (text.Trim() != "")
+			{
+				cityName = searchTB.Text;
+				history.AddItem(cityName);
+				MenuItem mItem = new MenuItem();
+				mItem.Name = cityName.Replace(" ", "_");
+				mItem.Header = cityName;
+				mItem.Click += MenuItem_Click;
+				historyMenu.Items.Add(mItem);
+				getForecast(cityName);
+				getWeather(cityName);
+			}
+		}
+
+		private void BookmarkBtn_Click(object sender, RoutedEventArgs e)
+		{
+			string text = searchTB.Text;
+			if (text.Trim() != "") { 
+				bookmark.AddItem(text);
+
+				MenuItem mItem = new MenuItem();
+				mItem.Name = text.Replace(" ", "_");
+				mItem.Header = text;
+				mItem.Click += MenuItem_Click;
+				bookmarkMenu.Items.Add(mItem);
+			}
 		}
 	}
 }

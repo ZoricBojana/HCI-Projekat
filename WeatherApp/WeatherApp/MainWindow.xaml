@@ -23,10 +23,19 @@
                 <Separator></Separator>
                 <MenuItem Header="_"></MenuItem>
             </MenuItem>
+            <TextBox Width="152" Name="searchTB"></TextBox>
+            <Button Name="searchBtn" Click="SearchBtn_Click">Pretrazi</Button>
+            <Button Name="bookmarkBtn" Click="BookmarkBtn_Click" >Dodaj u omiljene</Button>
+            <Separator></Separator>
+            <Separator></Separator>
+            <Separator></Separator>
+            <MenuItem Header="_Istorija pretrage" Name="historyMenu" HorizontalAlignment="Right">
+            </MenuItem>
+            <Separator></Separator>
             <MenuItem Header="_Omiljene lokacije" Name="bookmarkMenu">
       
             </MenuItem>
-            <MenuItem Header="_Osvezi" Name="refresh" HorizontalAlignment="Right">
+            <MenuItem Header="_Osvezi" Name="refresh" HorizontalAlignment="Right" Click="Refresh_Click">
 
             </MenuItem>
         </Menu>
