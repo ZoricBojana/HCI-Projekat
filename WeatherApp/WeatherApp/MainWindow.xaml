@@ -17,13 +17,18 @@
                     <!-- Prikazujemo preko Dock Panela koji preuzme sav prostor -->
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
-            <MenuItem Header="_Pretraga">
+            <MenuItem Header="_Pretraga" Name="menu">
                 <MenuItem Header="_"></MenuItem>
                 <MenuItem Header="_"></MenuItem>
                 <Separator></Separator>
                 <MenuItem Header="_"></MenuItem>
             </MenuItem>
+            <MenuItem Header="_Bookmark" Name="bookmarkMenu">
+      
+            </MenuItem>
+            <MenuItem Header="_Osvezi" Name="refresh" HorizontalAlignment="Right">
 
+            </MenuItem>
         </Menu>
         <DockPanel DockPanel.Dock="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <Grid DockPanel.Dock="Bottom">
@@ -48,6 +53,10 @@
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Name="lbl_city" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24"></Label>
+
+
                 <Image Name="weatherIcon" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Stretch="UniformToFill"/>
 
                 <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Name="lbl_temperature" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="48">C</Label>
@@ -72,6 +81,9 @@
                 <Label Name="day5Lab" Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center"></Label>
                 <Image Name="day5Icon" Grid.Row="2" Grid.Column="4" VerticalAlignment="Center" Stretch="None" />
                 <Label Name="day5temp" Grid.Row="2" Grid.Column="4" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Label>
+                
+                
+                
             </Grid>
 
         </DockPanel>

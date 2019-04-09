@@ -4,11 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.ComponentModel;
 
 namespace WeatherApp
 {
-	class Bookmark
+	class Bookmark //: INotifyPropertyChanged
 	{
+		/*public event PropertyChangedEventHandler PropertyChanged;
+		protected virtual void OnPropertyChanged(string name)
+		{
+			if (PropertyChanged != null)
+			{
+				PropertyChanged(this, new PropertyChangedEventArgs(name));
+			}
+		}*/
+
 		public List<string> BookmarkItems { get; set; }
 
 		public Bookmark()

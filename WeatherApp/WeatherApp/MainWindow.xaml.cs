@@ -28,19 +28,33 @@ namespace WeatherApp
 
 
 		History history = new History();
-		Bookmark bookmark = new Bookmark();
+		
 
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			//*******dodaj elemente
+			Bookmark bookmark = new Bookmark();
+			foreach (string el in bookmark.BookmarkItems)
+			{
+				MenuItem mItem = new MenuItem();
+				mItem.Name = el.Replace(" ", "_");
+				mItem.Header = el;
+				mItem.Click+= MenuItem_Click;
+				bookmarkMenu.Items.Add(mItem);
+			}
+			//******
+
 			getLocation(); // smesta lokaciju u cityName
 			getForecast(cityName);
 			getWeather(cityName);
 
-			lbl_updated.Content = ("Azurirano: " + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"));
+			//lbl_updated.Content = ("Azurirano: " + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"));
 		}
 
 		void getForecast(string city) {
+			lbl_updated.Content = ("Azurirano: " + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"));
 			// city = Novi+Sad
 			using (WebClient webClient = new WebClient()) {
 				string url = ($"http://api.openweathermap.org/data/2.5/forecast?q={city}&appid={APPID}");
@@ -206,7 +220,10 @@ namespace WeatherApp
 
 		void getWeather(string city)
 		{
+			lbl_updated.Content = ("Azurirano: " + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"));
 			// city = Novi+Sad
+			lbl_city.Content = "Grad: \n" + city;
+
 			using (WebClient webClient = new WebClient())
 			{
 				string url = ($"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={APPID}");
@@ -231,6 +248,16 @@ namespace WeatherApp
 				//textBox_search.Text = cityName;
 			}
 		}
-		
+
+		private void MenuItem_Click(object sender, RoutedEventArgs e)
+		{
+			MenuItem menuItem = sender as MenuItem;
+			string text = menuItem.Header as string;
+
+			cityName = text;
+
+			getForecast(cityName);
+			getWeather(cityName);
+		}
 	}
 }
